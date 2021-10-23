@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_meme/view/view_meme.dart';
+
+import 'data/meme_data.dart';
 
 void main() {
+  //getmeme();
   runApp(const MyApp());
 }
 
@@ -15,6 +19,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const Text("Pantalla inicial"));
+        home: ViewMeme());
   }
 }
