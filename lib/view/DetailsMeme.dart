@@ -12,37 +12,24 @@ class DetailsMeme extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(meme.url.toString()),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              height: height * 0.4,
-              width: double.infinity,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(50.0),
-                    bottomRight: Radius.circular(50.0)),
-                color: Color(0xFF25a974),
-                border: Border(
-                  left: BorderSide(
-                    color: Colors.green,
-                    width: 3,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(meme.url.toString()),
+                    fit: BoxFit.cover,
                   ),
                 ),
+                height: height * 0.4,
+                width: double.infinity,
               ),
-              height: height * 0.1,
-              width: double.infinity,
             ),
             Expanded(
               child: Container(
                 height: height * 0.2,
                 width: double.infinity,
-                child: Row(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Column(
@@ -54,7 +41,7 @@ class DetailsMeme extends StatelessWidget {
                                 fontWeight: FontWeight.bold, fontSize: 20),
                           ),
                           Text(
-                            "meme.numide.toString()",
+                            meme.id.toString(),
                             style: TextStyle(
                                 fontWeight: FontWeight.normal, fontSize: 18),
                           ),
@@ -62,20 +49,30 @@ class DetailsMeme extends StatelessWidget {
                     Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Fecha ingreso",
+                          Text("Autor",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20)),
-                          Text("meme.fechaing",
+                          Text(meme.autor.toString(),
                               style: TextStyle(
                                   fontWeight: FontWeight.normal, fontSize: 18)),
                         ]),
                     Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Cod valor",
+                          Text("Creado",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20)),
-                          Text("meme.codtipovalor.toString()",
+                          Text(meme.create.toString(),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.normal, fontSize: 18)),
+                        ]),
+                    Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Tiempo",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20)),
+                          Text(meme.timestamp.toString(),
                               style: TextStyle(
                                   fontWeight: FontWeight.normal, fontSize: 18)),
                         ]),

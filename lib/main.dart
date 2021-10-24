@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:parcial_meme/view/view_meme.dart';
 
 import 'data/meme_data.dart';
 
 void main() {
+  HttpOverrides.global = new MyHttpOverrides();
   //getmeme();
   runApp(const MyApp());
 }
@@ -20,5 +23,14 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: ViewMeme());
+  }
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }

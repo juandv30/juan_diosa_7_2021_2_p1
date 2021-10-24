@@ -3,5 +3,8 @@ class Meme {
   String? url = "";
   String? id = "";
   String? autor = "";
-  Meme({this.title, this.url, this.id, this.autor});
+  String? create = "";
+  String? timestamp = "";
+  Meme(
+      {this.title, this.url, this.id, this.autor, this.create, this.timestamp});
 }
