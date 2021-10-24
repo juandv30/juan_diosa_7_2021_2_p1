@@ -25,12 +25,11 @@ class _ViewMemeState extends State<ViewMeme> {
     var connectivityResult = await Connectivity().checkConnectivity();
     if (connectivityResult == ConnectivityResult.none) {
       swconection = false;
-      /*  Navigator.push(context, MaterialPageRoute(
+      Navigator.push(context, MaterialPageRoute(
         builder: (context) {
           return conectivity();
         },
-      )); */
-      _showMaterialDialog();
+      ));
     } else {
       swconection = true;
       _listmeme = await getMemes();
@@ -64,30 +63,5 @@ class _ViewMemeState extends State<ViewMeme> {
         return Tarjet(meme: meme);
       },
     ));
-  }
-
-  void _showMaterialDialog() {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text('Material Dialog'),
-            content: Text('Hey! I am Coflutter!'),
-            actions: <Widget>[
-              /*         TextButton(
-               onPressed: () {
-                   _dismissDialog();
-                  },
-                 child: Text('Close')),
-               TextButton(
-                onPressed: () {
-                  print('HelloWorld!');
-                  _dismissDialog();
-                },
-                child: Text('HelloWorld!'),
-           */
-            ],
-          );
-        });
   }
 }

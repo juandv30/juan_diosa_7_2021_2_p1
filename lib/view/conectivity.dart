@@ -6,13 +6,15 @@ class conectivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          child: Column(
-        children: [
-          Text("Sin conexión a internet."),
-          CircularProgressIndicator(),
-        ],
-      )),
+      body: Center(
+        child: Container(
+            child: Column(
+          children: [
+            Text("Sin conexión a internet."),
+            CircularProgressIndicator(),
+          ],
+        )),
+      ),
     );
   }
 }
